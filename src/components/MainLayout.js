@@ -7,7 +7,7 @@ function MainLayout(props) {
         <div>
             <Navbar/>
             <div className="mt-4 container">
-                <div className="row">
+                <div className="row row-reverse">
                     <div className="col-md-8">
                         {props.body}
                     </div>

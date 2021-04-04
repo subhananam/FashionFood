@@ -1,10 +1,18 @@
-const authReducer = (state = {isLogged : false, user: "Guest"}, action) => {
+import { actionAuth } from "../actions/actionTypes";
+
+const authReducer = (state = {}, action) => {
     switch(action.type){
-        case 'SIGN_IN' :
-            return {isLogged : true, user : action.user};
-        case 'SIGN_OUT' :
-            return {isLogged : false, user : "Guest"};
-        default : return {isLogged : false, user : "Guest"};
+        case actionAuth.login :
+            localStorage.setItem('isLoggedIn', true);
+            localStorage.setItem('user', action.data.email);
+            return {check : true, user : action.data.email};
+        case actionAuth.logout :
+            localStorage.removeItem('isLoggedIn')
+            localStorage.removeItem('user')
+            return {check : false, user : "Guest"};
+        default : return {
+            check : localStorage.getItem('isLoggedIn') ? localStorage.getItem('isLoggedIn') : false,
+            user : localStorage.getItem('user') ? localStorage.getItem('user') : "Guest"};
     }
 }
 

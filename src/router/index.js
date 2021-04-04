@@ -10,7 +10,10 @@ function Router() {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/">
-                    <MainLayout body={<Login/>}/>
+                    <MainLayout body={<Fashion/>}/>
+                </Route>
+                <Route exact path="/login">
+                    <Login/>
                 </Route>
                 <Route exact path="/fashion">
                     <MainLayout body={<Fashion/>}/>
