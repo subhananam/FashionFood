@@ -51,13 +51,13 @@ export const product = [
       id: 9,
       category: "Food",
       name: "Nasi Goreng",
-      image: "img/products/food/food3.jpg"
+      image: "img/products/food/food3.jpeg"
     },
     {
       id: 10,
       category: "Food",
       name: "Lontong Opor",
-      image: "img/products/food/food4.jpg"
+      image: "img/products/food/food4.jpeg"
     },
     {
       id: 11,
